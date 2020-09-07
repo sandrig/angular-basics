@@ -1,12 +1,10 @@
 <h1>Hello Angular!</h1>
 
 <button (click)="toggle = !toggle">Toggle</button>
+<button (click)="toggle = 111">Set 111</button>
 
-<!--<p *ngIf="toggle" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, suscipit.</p>-->
-<!--<p *ngIf="!toggle" class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, nemo!</p>-->
-
-<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, suscipit.</p>
-
-<ng-template #blueP>
-  <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, nemo!</p>
-</ng-template>
+<div [ngSwitch]="toggle">
+  <p *ngSwitchCase="true" class="red">Lorem ipsum.</p>
+  <p *ngSwitchCase="false" class="blue">Lorem ipsum dolor.</p>
+  <p *ngSwitchDefault>Lorem ipsum dolor sit.</p>
+</div>
