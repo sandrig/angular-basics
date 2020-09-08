@@ -8,4 +8,16 @@
   <p [appStyle]="'blue'" [dStyles]="{border: '1px solid red', borderRadius: '15px'}">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quisquam?
   </p>
+
+  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
+
+<!--  <ng-template [ngIf]="isVisible">-->
+<!--    <div class="wrap">-->
+<!--      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis dolores doloribus earum eligendi, nobis nulla possimus? Excepturi, molestiae, quae.</p>-->
+<!--    </div>-->
+<!--  </ng-template>-->
+
+  <div class="wrap" *appIfnot="!isVisible">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis dolores doloribus earum eligendi, nobis nulla possimus? Excepturi, molestiae, quae.</p>
+  </div>
 </div>
