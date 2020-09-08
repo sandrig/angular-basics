@@ -1,7 +1,9 @@
 <div class="container">
   <h1>Angular components</h1>
 
-  <app-post-form></app-post-form>
+  <app-post-form
+    (handleAddPost)="updatePosts($event)"
+  ></app-post-form>
 
   <hr />
 
