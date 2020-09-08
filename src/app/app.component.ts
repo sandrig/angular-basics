@@ -15,7 +15,8 @@ export class AppComponent {
   posts: Post[] = [
     {
       title: 'I want to learn Angular components',
-      text: 'I am still learning components'
+      text: 'I am still learning components',
+      id: 1
     },
     {
       title: 'I want to learn React components',
@@ -27,4 +28,10 @@ export class AppComponent {
   updatePosts(post: Post) {
     this.posts.unshift(post);
   }
+
+  removePost(id: number) {
+    console.log('Id to remove:', id);
+    this.posts = this.posts.filter(p => p.id !== id);
+  }
+
 }
