@@ -18,11 +18,11 @@ export class AppComponent implements OnInit {
       text: 'I am still learning components',
       id: 1
     },
-    // {
-    //   title: 'I want to learn React components',
-    //   text: 'I studied react components',
-    //   id: 2
-    // },
+    {
+      title: 'I want to learn React components',
+      text: 'I studied react components',
+      id: 2
+    },
   ];
 
   ngOnInit(): void {
