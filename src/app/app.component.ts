@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export interface Post {
   title: string;
@@ -12,19 +13,15 @@ export interface Post {
 })
 export class AppComponent {
 
-  search = '';
-  searchField = 'title';
+  p: Promise<string> = new Promise<string>(resolve => {
+    setTimeout(() => {
+      resolve('Promise resolved');
+    }, 4000);
+  });
 
-  posts: Post[] = [
-    { title: 'Angular', text: 'Angular is a platform for building mobile and desktop web applications. '},
-    { title: 'React', text: 'A JavaScript library for building user interfaces.'},
-    { title: 'Vue', text: 'The Progressive JavaScript Framework'},
-  ];
-
-  addPost() {
-    this.posts.unshift({
-      title: 'Angular 10',
-      text: 'How to learn Angular?'
-    });
-  }
+  date$: Observable<Date> =  new Observable(obs => {
+    setInterval(() => {
+      obs.next(new Date());
+    }, 1000);
+  });
 }
