@@ -1,25 +1,15 @@
 <div class="container">
-  <h1>Angular components</h1>
+  <h1>Angular pipes</h1>
 
-  <h2>SubHeader</h2>
+  <p>
+    {{ e | number:'1.1-5' }}
+  </p>
 
-  <app-post-form
-    (handleAddPost)="updatePosts($event)"
-  ></app-post-form>
+  <p>
+    {{ e | number:'3.1-2' }}
+  </p>
 
-  <hr />
-
-  <app-post
-    *ngFor="let post of posts"
-    [post]="post"
-    (handleRemove)="removePost($event)"
-  >
-    <div #info>
-      <small *ngIf="post.text.length > 10; else short">long post</small>
-      <ng-template #short>
-        <small>small post</small>
-      </ng-template>
-    </div>
-  </app-post>
-
+  <p>
+    {{ e | number:'1.0-0' }}
+  </p>
 </div>
