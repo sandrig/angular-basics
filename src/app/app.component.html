@@ -1,25 +1,10 @@
 <div class="container">
-  <h1>Angular components</h1>
+  <h1>Angular services</h1>
 
-  <h2>SubHeader</h2>
+  <div class="card">
+    <h2>App counter: {{appCounterService.counter}}</h2>
 
-  <app-post-form
-    (handleAddPost)="updatePosts($event)"
-  ></app-post-form>
-
-  <hr />
-
-  <app-post
-    *ngFor="let post of posts"
-    [post]="post"
-    (handleRemove)="removePost($event)"
-  >
-    <div #info>
-      <small *ngIf="post.text.length > 10; else short">long post</small>
-      <ng-template #short>
-        <small>small post</small>
-      </ng-template>
-    </div>
-  </app-post>
-
+    <button class="btn" (click)="appCounterService.increase()">+</button>
+    <button class="btn" (click)="appCounterService.decrease()">-</button>
+  </div>
 </div>
