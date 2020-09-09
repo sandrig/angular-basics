@@ -20,4 +20,11 @@ export class AppComponent {
     { title: 'React', text: 'A JavaScript library for building user interfaces.'},
     { title: 'Vue', text: 'The Progressive JavaScript Framework'},
   ];
+
+  addPost() {
+    this.posts.unshift({
+      title: 'Angular 10',
+      text: 'How to learn Angular?'
+    });
+  }
 }
