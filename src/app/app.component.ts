@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  date: Date = new Date();
+  float = 0.42;
 }
